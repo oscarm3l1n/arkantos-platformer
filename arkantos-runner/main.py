@@ -100,7 +100,7 @@ while True:
     true_camera.x += (player_rect.x - true_camera.x - offset.x) / 20 # The division is to make the true_camera smoother
     true_camera.y += (player_rect.y - true_camera.y - offset.y) / 20
     # Without this, the camera is pretty laggy. Some pixels here and there 
-    # Seem a tee bit off without it
+    # seem a tee bit off without it
     camera = true_camera
     camera.x = int(camera.x)
     camera.y = int(camera.y)
