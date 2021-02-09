@@ -64,7 +64,6 @@ ground_rect     = ground_img.get_rect()
 
 # Player graphics
 player_frames = [
-    pygame.image.load('assets/idle1.png').convert(),
     pygame.image.load('assets/run1.png').convert(),
     pygame.image.load('assets/run2.png').convert(),
     pygame.image.load('assets/run3.png').convert(),
@@ -74,6 +73,8 @@ player_frames = [
 for frame in player_frames:
     frame.set_colorkey(WHITE)
 player_animation_idx = 0
+player_idle_surf    = pygame.image.load('assets/idle1.png').convert()
+player_idle_surf.set_colorkey(WHITE)
 player_surf         = player_frames[player_animation_idx]            
 player_rect         = player_surf.get_rect(center = (50, 50))
 player_flip         = False
@@ -205,7 +206,7 @@ while True:
                     player_animation_idx = 0
                 player_surf = player_frames[player_animation_idx]
             else:
-                player_surf = player_frames[0]
+                player_surf = player_idle_surf
     
     # Scaling to desired size
     surf = pygame.transform.scale(display, WINDOW_SIZE)
